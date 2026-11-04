@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Perbandingan — RuangKampus</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+  </head>
+
+  <body class="bg-body-tertiary d-flex flex-column min-vh-100">
+    <header>
+      <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top" aria-label="Navigasi utama">
+        <div class="container">
+          <a class="navbar-brand fw-bold text-primary" href="./index.html">RuangKampus</a>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation"
+            aria-controls="mainNavigation" aria-expanded="false" aria-label="Buka navigasi">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="mainNavigation">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link" href="./hunian.html">Daftar hunian</a></li>
+              <li class="nav-item"><a class="nav-link active" href="./perbandingan.html">Perbandingan</a></li>
+              <li class="nav-item"><a class="nav-link" href="./area.html">Area contoh</a></li>
+              <li class="nav-item"><a class="nav-link" href="./rating-ulasan.html">Rating &amp; ulasan</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container py-4 py-lg-5 flex-grow-1">
+      <a class="link-secondary text-decoration-none" href="./index.html">← Beranda</a>
+
+      <header class="bg-primary-subtle rounded-4 p-4 p-lg-5 mt-3 mb-4">
+        <span class="badge text-bg-primary mb-3">Data contoh</span>
+        <h1 class="display-6 fw-bold text-primary">Bandingkan pilihan hunian</h1>
+        <p class="lead mb-0">
+          Bandingkan harga, jarak, dan fasilitas untuk membantu memilih tempat tinggal dekat kampus.
+        </p>
+      </header>
+
+      <section aria-labelledby="comparison-title">
+        <div class="d-flex flex-wrap justify-content-between align-items-end gap-2 mb-3">
+          <div>
+            <h2 class="h4 mb-1" id="comparison-title">Ringkasan hunian</h2>
+            <p class="text-body-secondary mb-0">Geser tabel ke samping pada layar kecil.</p>
+          </div>
+          <a class="btn btn-outline-primary" href="./hunian.html">Lihat daftar hunian</a>
+        </div>
+
+        <div class="card border-0 shadow-sm">
+          <div class="table-responsive rounded">
+            <table class="table table-hover table-striped align-middle mb-0">
+              <thead class="table-primary">
+                <tr>
+                  <th scope="col">Aspek</th>
+                  <th scope="col">Kos Seroja</th>
+                  <th scope="col">Kos Melati</th>
+                  <th scope="col">Kontrakan Kenanga</th>
+                  <th scope="col">Apartemen Taman Kota</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Jenis</th><td><span class="badge text-bg-primary">Kos</span></td><td><span class="badge text-bg-primary">Kos</span></td><td><span class="badge text-bg-success">kontrakan</span></td><td><span class="badge text-bg-info">Apartemen</span></td></tr>
+                <tr><th scope="row">Harga per bulan</th><td class="fw-semibold text-primary">Rp950.000</td><td class="fw-semibold text-primary">Rp1.250.000</td><td class="fw-semibold text-primary">Rp2.800.000</td><td class="fw-semibold text-primary">Rp4.100.000</td></tr>
+                <tr><th scope="row">Deposit</th><td>Rp0</td><td>Rp700.000</td><td>Rp1.500.000</td><td>Rp.2.000.000</td></tr>
+                <tr><th scope="row">Area</th><td>Selatan</td><td>Dekat Kampus</td><td>Timur</td><td>Utara</td></tr>
+                <tr><th scope="row">Jarak dari kampus</th><td>2,8 km</td><td>1,9 km</td><td>2,4 km</td><td>3,1 km</td></tr>
+                <tr><th scope="row">Ketersediaan</th><td>1 kamar</td><td>3 kamar</td><td>1 kontrakan</td><td>5 unit</td></tr>
+                <tr>
+                  <th scope="row">Fasilitas</th>
+                  <td>Wi-Fi, laundry, parkir motor</td>
+                  <td>Wi-Fi, kamar mandi dalam, dapur bersama</td>
+                  <td>2 kamar tidur, ruang keluarga, dapur</td>
+                  <td>Furnished, kolam renang, keamanan 24 jam</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-top bg-white py-4">
+      <div class="container small text-body-secondary">®HunianKu · 2026</div>
+    </footer>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
