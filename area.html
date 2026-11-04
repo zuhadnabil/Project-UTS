@@ -269,7 +269,7 @@
 
         const areaMap = L.map(mapElement).setView(campusCenter, 15);
 
-        // tampilan peta
+        // tampilan peta dengan max zoom 19 dan menampilkan copyright dari OpenStreetMap.
         L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
           maxZoom: 19,
           attribution:
@@ -315,17 +315,6 @@
 
         });
 
-        // Marker Kampus UKRI sebagai titik tujuan.
-        L.marker(campusCenter)
-          .addTo(areaMap)
-          .bindTooltip("Kampus UKRI", {
-            permanent: true,
-            direction: "auto"
-          });
-
-        // Center peta di Kampus UKRI.
-        areaMap.setView(campusCenter, 15);
-
         // Marker Kampus UKRI.
         L.marker(campusCenter)
           .addTo(areaMap)
@@ -334,11 +323,12 @@
             direction: "auto"
           });
 
-        // Center peta tetap di Kampus UKRI.
+        // Center peta tetap di Kampus UKRI dengan zoom level 15.
         areaMap.setView(campusCenter, 15);
 
       } else {
 
+        // jika koneksi internet tidak memuat Leaflet, maka akan menampilkan teks berikut
         mapElement.textContent =
           "Peta memerlukan koneksi internet untuk memuat Leaflet.";
 
