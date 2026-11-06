@@ -3,77 +3,36 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Lihat contoh lokasi hunian mahasiswa dan perbandingan harga di sekitar kampus.">
+    <meta name="description" content="Lihat lokasi hunian mahasiswa dan perbandingan harga di sekitar kampus.">
     <title>Area — HunianKu</title>
-
-    <!-- menggunakan boostrap untuk styling dan leaflet untuk peta juga highcharts untuk diagram grafik rata-rata harga per bulan -->
-    <link rel="stylesheet" href="./css/bootstrap.min.css"> 
-
-    <!-- link untuk memanggil template leaflet css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="anonymous"/> 
-
-    <!-- link untuk memanggil template leaflet-routing-machine css -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" crossorigin="anonymous"/> 
-
-    <!-- CSS internal untuk styling -->
-    <style>
-      html {
-        scroll-behavior: smooth;
-        scrollbar-gutter: stable;
-      }
-      .campus-tooltip {
-        text-align: center;
-        white-space: nowrap;
-      }
-      #map {
-        min-height: 24rem;
-        height: 100%;
-        border-radius: var(--bs-border-radius);
-      }
-      #rentChart {
-        min-height: 24rem;
-      }
-    </style>
   </head>
 
   <body class="bg-body-tertiary d-flex flex-column min-vh-100">
 
-    <!-- header atau bagian navigasi -->
-    <header>
-      <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top" aria-label="Navigasi utama">
+    <header class="sticky-top">
+    <nav class="navbar navbar-expand-lg bg-white border-bottom" aria-label="Navigasi utama">
         <div class="container">
-          <a class="navbar-brand fw-bold text-primary" href="./index.html">HunianKu</a>
+            <a class="navbar-brand fw-bold text-primary" href="./index.html">HunianKu</a>
 
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#mainNavigation"
-            aria-controls="mainNavigation"
-            aria-expanded="false"
-            aria-label="Buka navigasi">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation" aria-controls="mainNavigation" aria-expanded="false" aria-label="Buka navigasi">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-          <div class="collapse navbar-collapse" id="mainNavigation">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="./hunian.html">Daftar hunian</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./perbandingan.html">Perbandingan</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="./area.html">Area</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./rating-ulasan.html">Rating &amp; ulasan</a>
-              </li>
-            </ul>
-          </div>
+            <div class="collapse navbar-collapse" id="mainNavigation">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="./hunian.html">Daftar hunian</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./perbandingan.html">Perbandingan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./area.html">Area</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./rating-ulasan.html">Rating &amp; ulasan</a></li>
+                </ul>
+            </div>
         </div>
-      </nav>
-    </header>
+    </nav>
+</header>
 
     <main class="container py-4 py-lg-5 flex-grow-1">
       <a class="link-secondary text-decoration-none" href="./index.html">
@@ -146,13 +105,12 @@
             <article class="card h-100">
               <div class="card-body">
                 <h3 class="h5">Area Selatan</h3>
-                <p class="mb-0">Kos Seroja, jarak 2,8 km.</p>
+                <p class="mb-3">Kos Seroja, jarak 2,8 km.</p>
 
-                <button class="btn btn-outline-primary btn-sm" type="button" data-bs-toggle="collapse"
-                data-bs-target="#seroja" aria-expanded="false" aria-controls="seroja">Detail</button>
+                <button class="btn btn-outline-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#seroja" aria-expanded="false" aria-controls="seroja">Detail</button>
                 <div class="collapse mt-3" id="seroja">
                   <div class="card card-body">
-                    Tiga unit tersedia. <br> Deposit Rp0. <br>Kontak: kos.seroja@example.test.
+                    Enam kamar tersedia. <br> Deposit Rp0. <br>Kontak: kos.seroja@hotmail.co.id
                   </div>
                 </div>
               </div>
@@ -164,13 +122,12 @@
             <article class="card h-100">
               <div class="card-body">
                 <h3 class="h5">Dekat kampus</h3>
-                <p class="mb-0">Kos Melati, jarak 0.6 km.</p>
+                <p class="mb-3">Kos Melati, jarak 0.6 km.</p>
 
-                <button class="btn btn-outline-primary btn-sm" tclassype="button" data-bs-toggle="collapse"
-                data-bs-target="#melati" aria-expanded="false" aria-controls="melati">Detail</button>
+                <button class="btn btn-outline-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#melati" aria-expanded="false" aria-controls="melati">Detail</button>
                 <div class="collapse mt-3" id="melati">
                   <div class="card card-body">
-                    Empat kamar tersedia. <br>Deposit Rp700.000. <br>Kontak: melati@hotmail.co.id
+                    Satu kamar tersedia. <br>Deposit Rp700.000. <br>Kontak: melati@hotmail.co.id
                   </div>
                 </div>
               </div>
@@ -182,13 +139,12 @@
             <article class="card h-100">
               <div class="card-body">
                 <h3 class="h5">Area Barat</h3>
-                <p class="mb-0">Kontrakan Kenanga, jarak 1,9 km.</p>
+                <p class="mb-3">Kontrakan Kenanga, jarak 1,9 km.</p>
 
-                <button class="btn btn-outline-primary btn-sm" type="button" data-bs-toggle="collapse"
-                data-bs-target="#kenanga" aria-expanded="false" aria-controls="kenanga">Detail</button>
+                <button class="btn btn-outline-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#kenanga" aria-expanded="false" aria-controls="kenanga">Detail</button>
                 <div class="collapse mt-3" id="kenanga">
                   <div class="card card-body">
-                    Satu unit tersedia. <br>Deposit Rp1.500.000. <br>Kontak: kenanga@hotmail.co.id
+                    Enam kontrakan tersedia. <br>Deposit Rp1.500.000. <br>Kontak: kenanga@hotmail.co.id
                   </div>
                 </div>
               </div>
@@ -200,10 +156,9 @@
             <article class="card h-100">
               <div class="card-body">
                 <h3 class="h5">Area Timur</h3>
-                <p class="mb-0">Apartemen Taman Kota, jarak 2,4 km.</p>
+                <p class="mb-3">Apartemen Taman Kota, jarak 2,4 km.</p>
 
-                <button class="btn btn-outline-primary btn-sm" type="button" data-bs-toggle="collapse"
-                data-bs-target="#taman" aria-expanded="false" aria-controls="taman">Detail</button>
+                <button class="btn btn-outline-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#taman" aria-expanded="false" aria-controls="taman">Detail</button>
                 <div class="collapse mt-3" id="taman">
                   <div class="card card-body">
                     Dua unit tersedia. <br> Deposit Rp2.000.000. <br>Kontak: apartemen.taman@hotmail.co.id
@@ -217,215 +172,14 @@
       </section>
     </main>
 
-    <!-- ini footer / bagian bawah dari website -->
     <footer class="border-top bg-white py-4">
-      <div class="container small text-body-secondary">
-        ®HunianKu · 2026
-      </div>
-    </footer>
+      <div class="container small text-body-secondary">®HunianKu · 2026</div>
+</footer>
 
-    <!-- link 1 untuk memanggil js dari bootstrap -->
-    <script src="./js/bootstrap.bundle.min.js"></script> 
-
-    <!-- link 2 untuk memanggil js dari leaflet -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script> 
-
-    <!-- link 3 untuk memanggil js dari leaflet-routing-machine -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="anonymous"></script> 
     <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script> 
-
-    <!-- link 4 untuk memanggil js dari highcharts -->
     <script src="https://code.highcharts.com/highcharts.js"></script>
-
-    <script>
-      // script koordinat Kampus UKRI
-      const campusCenter = [-6.92667855, 107.62625748];
-
-      // untuk bagian kos, kontrakan, dan apartemen termasuk tipe, harga, dan lokasi (koordinat)
-      const housing = [
-        {
-          name: "Kos Seroja",
-          type: "Kos",
-          price: 950000,
-          coordinates: [-6.9239, 107.6285]
-        },
-        {
-          name: "Kos Melati",
-          type: "Kos",
-          price: 1250000,
-          coordinates: [-6.925, 107.62]
-        },
-        {
-          name: "Kontrakan Kenanga",
-          type: "Kontrakan",
-          price: 2800000,
-          coordinates: [-6.929, 107.6235]
-        },
-        {
-          name: "Apartemen Taman Kota",
-          type: "Apartemen",
-          price: 4100000,
-          coordinates: [-6.932, 107.629]
-        }
-      ];
-
-      // memanggil id "map" dari div pada file html
-      const mapElement = document.getElementById("map");
-
-      if (window.L) {
-
-        const areaMap = L.map(mapElement).setView(campusCenter, 15);
-
-        // tampilan peta dengan max zoom 19 dan menampilkan copyright dari OpenStreetMap.
-        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-          maxZoom: 19,
-          attribution:
-            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        }).addTo(areaMap);
-
-        housing.forEach((listing) => {
-
-          const marker = L.marker(listing.coordinates).addTo(areaMap);
-
-          const price = new Intl.NumberFormat("id-ID", {
-            style: "currency",
-            currency: "IDR",
-            maximumFractionDigits: 0
-          }).format(listing.price);
-
-          marker.bindPopup(
-            "<strong>" + listing.name + "</strong><br>" +
-            listing.type + "<br>" + price + " / bulan"
-          );
-
-          // Rute dimulai dari lokasi hunian menuju Kampus UKRI.
-          L.Routing.osrmv1().route(
-            [
-              L.Routing.waypoint(L.latLng(listing.coordinates)),
-              L.Routing.waypoint(L.latLng(campusCenter))
-            ],
-            (error, routes) => {
-
-              if (error || !routes || !routes.length) {
-                console.warn("Rute tidak dapat dimuat untuk " + listing.name, error);
-                return;
-              }
-
-              L.polyline(routes[0].coordinates, {
-                color: "#0d6efd",
-                weight: 4,
-                opacity: 0.8
-              }).addTo(areaMap);
-
-            }
-          );
-
-        });
-
-        // Marker Kampus UKRI.
-        L.marker(campusCenter)
-        .addTo(areaMap)
-        .bindTooltip("Kampus UKRI", {
-          permanent: true,
-          direction: "top",
-          offset: [-15, 0],
-          className: "campus-tooltip"
-        });
-
-        // Center peta tetap di Kampus UKRI dengan zoom level 15.
-        areaMap.setView(campusCenter, 15);
-
-      } else {
-
-        // jika koneksi internet tidak memuat Leaflet, maka akan menampilkan teks berikut
-        mapElement.textContent =
-          "Peta memerlukan koneksi internet untuk memuat Leaflet.";
-
-      }
-
-      /* Bagian ini adalah konfigurasi grafik Highcharts untuk menampilkan rata-rata harga per bulan
-           menggunakan algoritma pembagian dari 0 - 5.000.000 / 1.000.000 agar hasilnya menjadi 0,0 - 5,0
-           lalu "return "Rp" + hasil dari pembagian dari 0 - 5.000.000 / 1.000.000 diakhiri dengan " jt";" sehingga hasilnya menjadi Rp0,0 jt - Rp5,0 jt dengan format 0,0
-           karena nilai tertingginya adalah 4.100.000 maka menggunakan angka 5.000.000 agar grafiknya tidak terlalu panjang.
-      */
-      const chartElement = document.getElementById("rentChart");
-
-      if (window.Highcharts) {
-
-        Highcharts.chart(chartElement, {
-
-          chart: {
-            type: "column"
-          },
-
-          title: {
-            text: null
-          },
-
-          xAxis: {
-            categories: ["Kos", "Kontrakan", "Apartemen"],
-            title: {
-              text: "Jenis hunian"
-            }
-          },
-
-          yAxis: {
-            min: 0,
-            title: {
-              text: "Harga per bulan"
-            },
-            labels: {
-              formatter() {
-                return "Rp" +
-                  Highcharts.numberFormat(this.value / 1000000, 1) +
-                  " jt";
-              }
-            }
-          },
-
-          tooltip: {
-            pointFormatter() {
-
-              // ini adalah format harga per bulan
-              const price = new Intl.NumberFormat("id-ID", {
-                style: "currency",
-                currency: "IDR",
-                maximumFractionDigits: 0
-              }).format(this.y);
-
-              return "<b>" + price + "</b>";
-
-            }
-          },
-
-          // bagian ini kredit, legend, dan konfigurasi grafik lainnya
-          credits: {
-            enabled: false
-          },
-
-          legend: {
-            enabled: false
-          },
-
-          series: [
-            {
-              name: "Harga rata-rata",
-              data: [1100000, 2800000, 4100000],
-              colorByPoint: true,
-              colors: ["#0d6efd", "#198754", "#6f42c1"]
-            }
-          ]
-
-        });
-
-      } else {
-
-        // jika koneksi internet tidak memuat Highcharts, maka akan menampilkan teks berikut
-        chartElement.textContent =
-          "Grafik memerlukan koneksi internet untuk memuat Highcharts.";
-
-      }
-
-    </script>
-
+    <script src="js/area.js"></script>
   </body>
 </html>
