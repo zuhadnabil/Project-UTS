@@ -3,91 +3,162 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Perbandingan — RuangKampus</title>
+    <meta name="description" content="Perbandingan lengkap antara kos, kontrakan, dan apartemen.">
+    <title>Perbandingan — HunianKu</title>
     <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-datatables@9.1.0/dist/style.css">
+    <link rel="stylesheet" href="./css/perbandingan.css?v=5">
   </head>
 
   <body class="bg-body-tertiary d-flex flex-column min-vh-100">
-    <header>
-      <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top" aria-label="Navigasi utama">
+
+    <header class="sticky-top">
+    <nav class="navbar navbar-expand-lg bg-white border-bottom" aria-label="Navigasi utama">
         <div class="container">
-          <a class="navbar-brand fw-bold text-primary" href="./index.html">RuangKampus</a>
+            <a class="navbar-brand fw-bold text-primary" href="./index.html">HunianKu</a>
 
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation"
-            aria-controls="mainNavigation" aria-expanded="false" aria-label="Buka navigasi">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation" aria-controls="mainNavigation" aria-expanded="false" aria-label="Buka navigasi">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-          <div class="collapse navbar-collapse" id="mainNavigation">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item"><a class="nav-link" href="./hunian.html">Daftar hunian</a></li>
-              <li class="nav-item"><a class="nav-link active" href="./perbandingan.html">Perbandingan</a></li>
-              <li class="nav-item"><a class="nav-link" href="./area.html">Area contoh</a></li>
-              <li class="nav-item"><a class="nav-link" href="./rating-ulasan.html">Rating &amp; ulasan</a></li>
-            </ul>
+            <div class="collapse navbar-collapse" id="mainNavigation">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="./hunian.html">Daftar hunian</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./perbandingan.html">Perbandingan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./area.html">Area</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./rating-ulasan.html">Rating &amp; ulasan</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+    <!-- bagian utama halaman -->
+    <main class="flex-grow-1">
+      <section class="comparison-hero text-white">
+        <div class="container py-4 py-lg-5">
+          <a class="comparison-backlink text-decoration-none" href="./index.html">← Beranda</a>
+          <div class="row align-items-center g-4 mt-1">
+            <div class="col-lg-8">
+              <span class="badge rounded-pill text-bg-light text-primary mb-3">Pilih dengan lebih yakin</span>
+              <h1 class="display-5 fw-bold mb-3">Bandingkan hunian dekat kampus.</h1>
+              <p class="lead comparison-hero-copy mb-0">Lihat harga, jarak, ketersediaan, dan fasilitas dalam satu tampilan sebelum menentukan pilihan.</p>
+            </div>
+            <div class="col-lg-4">
+              <div class="comparison-hero-summary" role="group" aria-label="Ringkasan data hunian">
+                <div class="comparison-hero-stat">
+                  <span class="comparison-hero-number">04</span>
+                  <span>pilihan hunian</span>
+                </div>
+                <div class="comparison-hero-stat">
+                  <span class="comparison-hero-number">03</span>
+                  <span>jenis hunian</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </nav>
-    </header>
+      </section>
 
-    <main class="container py-4 py-lg-5 flex-grow-1">
-      <a class="link-secondary text-decoration-none" href="./index.html">← Beranda</a>
+      <div class="container py-4 py-lg-5">
+      <section class="card comparison-card border-0 shadow-sm mb-4" aria-labelledby="add-housing-title">
+        <div class="card-body p-3 p-lg-4">
+          <h2 class="h4 mb-1" id="add-housing-title">Tambah opsi perbandingan</h2>
+          <p class="text-body-secondary">Tambahkan hunian yang ingin dibandingkan. Opsi ini hanya tampil sementara di tabel dan tidak disimpan ke database.</p>
 
-      <header class="bg-primary-subtle rounded-4 p-4 p-lg-5 mt-3 mb-4">
-        <span class="badge text-bg-primary mb-3">Data contoh</span>
-        <h1 class="display-6 fw-bold text-primary">Bandingkan pilihan hunian</h1>
-        <p class="lead mb-0">
-          Bandingkan harga, jarak, dan fasilitas untuk membantu memilih tempat tinggal dekat kampus.
-        </p>
-      </header>
+          <form id="property-form">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label" for="property-name">Nama hunian</label>
+                <input class="form-control" type="text" id="property-name" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="property-type">Jenis hunian</label>
+                <select class="form-select" id="property-type" required>
+                  <option value="">Pilih jenis</option>
+                  <option>Kos</option>
+                  <option>Kontrakan</option>
+                  <option>Apartemen</option>
+                </select>
+              </div>
+              <div class="col-sm-6 col-lg-3">
+                <label class="form-label" for="property-price">Harga per bulan (Rp)</label>
+                <input class="form-control" type="number" id="property-price" min="0" step="1000" required>
+              </div>
+              <div class="col-sm-6 col-lg-3">
+                <label class="form-label" for="property-deposit">Deposit (Rp)</label>
+                <input class="form-control" type="number" id="property-deposit" min="0" step="1000" value="0" required>
+              </div>
+              <div class="col-sm-6 col-lg-3">
+                <label class="form-label" for="property-area">Area</label>
+                <input class="form-control" type="text" id="property-area" required>
+              </div>
+              <div class="col-sm-6 col-lg-3">
+                <label class="form-label" for="property-distance">Jarak dari kampus (km)</label>
+                <input class="form-control" type="number" id="property-distance" min="0" step="0.1" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="property-availability">Ketersediaan</label>
+                <input class="form-control" type="text" id="property-availability" placeholder="Contoh: 2 kamar" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="property-facilities">Fasilitas</label>
+                <input class="form-control" type="text" id="property-facilities" placeholder="Contoh: Wi-Fi, parkir motor" required>
+              </div>
+              <div class="col-12 d-flex flex-wrap align-items-center gap-3">
+                <button class="btn btn-primary" type="submit">Tambahkan ke perbandingan</button>
+                <span class="small text-success" id="property-form-status" role="status" aria-live="polite"></span>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
 
-      <section aria-labelledby="comparison-title">
+      <!-- bagian perbandingan hunian dalam bentuk tabel responsif -->
+      <section class="comparison-table-section" aria-labelledby="comparison-title">
         <div class="d-flex flex-wrap justify-content-between align-items-end gap-2 mb-3">
           <div>
-            <h2 class="h4 mb-1" id="comparison-title">Ringkasan hunian</h2>
-            <p class="text-body-secondary mb-0">Geser tabel ke samping pada layar kecil.</p>
+            <span class="small fw-semibold text-primary text-uppercase">Daftar pilihan</span>
+            <h2 class="h2 mb-1" id="comparison-title">Ringkasan hunian</h2>
+            <p class="text-body-secondary mb-0">Cari pilihan yang baru ditambahkan atau telusuri data hunian.</p>
           </div>
           <a class="btn btn-outline-primary" href="./hunian.html">Lihat daftar hunian</a>
         </div>
 
-        <div class="card border-0 shadow-sm">
-          <div class="table-responsive rounded">
-            <table class="table table-hover table-striped align-middle mb-0">
+        <div class="card comparison-card comparison-table-card border-0 shadow-sm">
+          <div class="card-body p-3 p-lg-4">
+            <table class="table table-hover table-striped align-middle mb-0" id="tabelHunian">
               <thead class="table-primary">
                 <tr>
-                  <th scope="col">Aspek</th>
-                  <th scope="col">Kos Seroja</th>
-                  <th scope="col">Kos Melati</th>
-                  <th scope="col">Kontrakan Kenanga</th>
-                  <th scope="col">Apartemen Taman Kota</th>
+                  <th scope="col">Nama hunian</th>
+                  <th scope="col">Jenis</th>
+                  <th scope="col">Harga per bulan</th>
+                  <th scope="col">Deposit</th>
+                  <th scope="col">Area</th>
+                  <th scope="col">Jarak dari kampus</th>
+                  <th scope="col">Ketersediaan</th>
+                  <th scope="col">Fasilitas</th>
                 </tr>
               </thead>
               <tbody>
-                <tr><th scope="row">Jenis</th><td><span class="badge text-bg-primary">Kos</span></td><td><span class="badge text-bg-primary">Kos</span></td><td><span class="badge text-bg-success">kontrakan</span></td><td><span class="badge text-bg-info">Apartemen</span></td></tr>
-                <tr><th scope="row">Harga per bulan</th><td class="fw-semibold text-primary">Rp950.000</td><td class="fw-semibold text-primary">Rp1.250.000</td><td class="fw-semibold text-primary">Rp2.800.000</td><td class="fw-semibold text-primary">Rp4.100.000</td></tr>
-                <tr><th scope="row">Deposit</th><td>Rp0</td><td>Rp700.000</td><td>Rp1.500.000</td><td>Rp.2.000.000</td></tr>
-                <tr><th scope="row">Area</th><td>Selatan</td><td>Dekat Kampus</td><td>Timur</td><td>Utara</td></tr>
-                <tr><th scope="row">Jarak dari kampus</th><td>2,8 km</td><td>1,9 km</td><td>2,4 km</td><td>3,1 km</td></tr>
-                <tr><th scope="row">Ketersediaan</th><td>1 kamar</td><td>3 kamar</td><td>1 kontrakan</td><td>5 unit</td></tr>
-                <tr>
-                  <th scope="row">Fasilitas</th>
-                  <td>Wi-Fi, laundry, parkir motor</td>
-                  <td>Wi-Fi, kamar mandi dalam, dapur bersama</td>
-                  <td>2 kamar tidur, ruang keluarga, dapur</td>
-                  <td>Furnished, kolam renang, keamanan 24 jam</td>
-                </tr>
+                <tr><th scope="row">Kos Seroja</th><td>Kos</td><td>Rp950.000</td><td>Rp0</td><td>Selatan</td><td>2,8 km</td><td>6 kamar</td><td>Wi-Fi, laundry, parkir motor</td></tr>
+                <tr><th scope="row">Kos Melati</th><td>Kos</td><td>Rp1.250.000</td><td>Rp300.000</td><td>Dekat Kampus</td><td>0,6 km</td><td>4 kamar</td><td>Wi-Fi, kamar mandi dalam, dapur bersama</td></tr>
+                <tr><th scope="row">Kontrakan Kenanga</th><td>Kontrakan</td><td>Rp2.800.000</td><td>Rp700.000</td><td>Barat</td><td>1,9 km</td><td>1 unit</td><td>2 kamar tidur, ruang keluarga, dapur</td></tr>
+                <tr><th scope="row">Apartemen Taman Kota</th><td>Apartemen</td><td>Rp4.100.000</td><td>Rp1.500.000</td><td>Timur</td><td>2,4 km</td><td>2 unit</td><td>Furnished, kolam renang, keamanan 24 jam</td></tr>
               </tbody>
             </table>
           </div>
         </div>
       </section>
+      </div>
     </main>
 
     <footer class="border-top bg-white py-4">
       <div class="container small text-body-secondary">®HunianKu · 2026</div>
-    </footer>
+</footer>
 
-    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@9.1.0/dist/umd/simple-datatables.js"></script>
+    <script src="./js/perbandingan.js"></script>
   </body>
 </html>
