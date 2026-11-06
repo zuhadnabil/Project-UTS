@@ -3,9 +3,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const dataTable = new simpleDatatables.DataTable("#tabelHunian", {
     searchable: true,
     sortable: false,
-    paging: true,
-    perPage: 3,
-    perPageSelect: [3, 4],
+    paging: false,
+    perPage: 4,
+    perPageSelect: false,
     columns: [
       { select: 0, type: "string" },
       { select: 1, type: "string" },
