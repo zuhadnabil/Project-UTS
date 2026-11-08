@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Lihat daftar hunian dan fasilitas yang disediakan.">
+    <title>Hunian — HunianKu</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  </head>
+
+  <body class="bg-body-tertiary d-flex flex-column min-vh-100">
+
+    <header class="sticky-top">
+      <nav class="navbar navbar-expand-lg bg-white border-bottom" aria-label="Navigasi utama">
+        <div class="container">
+          <a class="navbar-brand fw-bold text-primary" href="./index.html">HunianKu</a>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation" aria-controls="mainNavigation" aria-expanded="false" aria-label="Buka navigasi">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="mainNavigation">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+              <li class="nav-item"><a class="nav-link" href="./hunian.html">Daftar hunian</a></li>
+              <li class="nav-item"><a class="nav-link" href="./perbandingan.html">Perbandingan</a></li>
+              <li class="nav-item"><a class="nav-link" href="./area.html">Area</a></li>
+              <li class="nav-item"><a class="nav-link" href="./rating-ulasan.html">Rating &amp; ulasan</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- bagian utama halaman -->
+    <main class="container py-4 py-lg-5 flex-grow-1">
+      <a class="link-secondary text-decoration-none" href="./index.html">← Beranda</a>
+      <h1 class="h2 mt-3 mb-3">Daftar hunian</h1>
+
+      
+      <!-- Daftar hunian dalam bentuk grid -->
+      <div class="row g-3">
+
+        <!-- Kos Seroja -->
+        <div class="col-md-6">
+          <article class="card h-100 overflow-hidden">
+            <div class="row g-0 h-100">
+              <div class="col-8">
+                <div class="card-body">
+                  <span class="badge text-bg-primary mb-2">Kos</span>
+                  <h2 class="h5">Kos Seroja</h2>
+                  <p class="text-body-secondary">Area Selatan · 2,8 km dari kampus</p>
+                  <p class="h5 text-primary">Rp950.000 <small class="fs-6 text-body-secondary">/ bulan</small></p>
+                  <p>Wi-Fi, laundry, parkir motor</p>
+                  <button class="btn btn-outline-primary btn-sm" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#seroja"
+                    aria-expanded="false" aria-controls="seroja">
+                    Detail
+                  </button>
+
+                  <!-- panel detail hunian yang akan muncul saat tombol ditekan -->
+                  <div class="collapse mt-3" id="seroja">
+                    <div class="card card-body">
+                      Enam kamar tersedia. Deposit Rp0. Kontak: seroja@hotmail.co.id
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4">
+                <img src="gambar/KosSeroja.jpg"
+                    class="img-fluid w-100 h-100 object-fit-cover"
+                    alt="Kos Seroja">
+              </div>
+
+            </div>
+          </article>
+        </div>
+
+        <!-- Kontrakan Kenanga -->
+        <div class="col-md-6">
+          <article class="card h-100 overflow-hidden">
+            <div class="row g-0 h-100">
+              <div class="col-8">
+                <div class="card-body">
+                  <span class="badge text-bg-success mb-2">Kontrakan</span>
+                  <h2 class="h5">Kontrakan Kenanga</h2>
+                  <p class="text-body-secondary">Area Barat · 1,9 km dari kampus</p>
+                  <p class="h5 text-primary">Rp2.800.000 <small class="fs-6 text-body-secondary">/ bulan</small></p>
+                  <p>2 kamar tidur, ruang keluarga, dapur</p>
+                  <button class="btn btn-outline-primary btn-sm" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#kenanga"
+                    aria-expanded="false" aria-controls="kenanga">
+                    Detail
+                  </button>
+
+                  <!-- panel detail hunian yang akan muncul saat tombol ditekan -->
+                  <div class="collapse mt-3" id="kenanga">
+                    <div class="card card-body">
+                      Satu unit tersedia. Deposit Rp700.000. Kontak: kenanga@hotmail.com.id
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4">
+                <img src="gambar/KontrakanKenanga.jpg"
+                    class="img-fluid w-100 h-100 object-fit-cover"
+                    alt="Kontrakan Kenanga">
+              </div>
+
+            </div>
+          </article>
+        </div>
+
+        <!-- Kos Melati -->
+        <div class="col-md-6">
+          <article class="card h-100 overflow-hidden">
+            <div class="row g-0 h-100">
+              <div class="col-8">
+                <div class="card-body">
+                  <span class="badge text-bg-primary mb-2">Kos</span>
+                  <h2 class="h5">Kos Melati</h2>
+                  <p class="text-body-secondary">Dekat Kampus · 0,6 km dari kampus</p>
+                  <p class="h5 text-primary">Rp1.250.000 <small class="fs-6 text-body-secondary">/ bulan</small></p>
+                  <p>Wi-Fi, kamar mandi dalam, dapur bersama</p>
+                  <button class="btn btn-outline-primary btn-sm" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#melati"
+                    aria-expanded="false" aria-controls="melati">
+                    Detail
+                  </button>
+
+                  <!-- panel detail hunian yang akan muncul saat tombol ditekan -->
+                  <div class="collapse mt-3" id="melati">
+                    <div class="card card-body">
+                      Empat kamar tersedia. Deposit Rp300.000. Kontak: melati@hotmail.com.id
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4">
+                <img src="gambar/KosMelati.jpg"
+                    class="img-fluid w-100 h-100 object-fit-cover"
+                    alt="Kos Melati">
+              </div>
+
+            </div>
+          </article>
+        </div>
+
+        <!-- Apartemen Taman Kota -->
+        <div class="col-md-6">
+          <article class="card h-100 overflow-hidden">
+            <div class="row g-0 h-100">
+              <div class="col-8">
+                <div class="card-body">
+                  <span class="badge text-bg-info mb-2">Apartemen</span>
+                  <h2 class="h5">Apartemen Taman Kota</h2>
+                  <p class="text-body-secondary">Area Timur · 2,4 km dari kampus</p>
+                  <p class="h5 text-primary">Rp4.100.000 <small class="fs-6 text-body-secondary">/ bulan</small></p>
+                  <p>Furnished, kolam renang, keamanan 24 jam</p>
+                  <button class="btn btn-outline-primary btn-sm" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#taman"
+                    aria-expanded="false" aria-controls="taman">
+                    Detail
+                  </button>
+
+                  <!-- panel detail hunian yang akan muncul saat tombol ditekan -->
+                  <div class="collapse mt-3" id="taman">
+                    <div class="card card-body">
+                      Dua unit tersedia. Deposit Rp1.500.000. Kontak: tamankota@hotmail.com.id
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4">
+                <img src="gambar/ApartemenTamanKota.jpg"
+                    class="img-fluid w-100 h-100 object-fit-cover"
+                    alt="Apartemen Taman Kota">
+              </div>
+
+            </div>
+          </article>
+        </div>
+
+      </div>
+
+      <!-- bagian kalkulator biaya awal hunian -->
+      <section class="card mt-4" aria-labelledby="biaya-awal-title">
+        <div class="card-body">
+          <h2 class="h4" id="biaya-awal-title">Hitung biaya awal hunian</h2>
+          <p class="text-body-secondary">Masukkan harga sewa bulanan dan deposit untuk melihat perkiraan biaya awal.</p>
+
+          <!-- form untuk menghitung biaya awal hunian -->
+          <form id="kalkulator-biaya">
+            <div class="row g-3 align-items-end">
+              <div class="col-md-5">
+                <label class="form-label" for="hargaSewa">Harga sewa per bulan (Rp)</label>
+                <input class="form-control" type="number" id="hargaSewa" min="0" step="any" placeholder="Contoh: 950000" required>
+              </div>
+              <div class="col-md-5">
+                <label class="form-label" for="depositHunian">Deposit (Rp)</label>
+                <input class="form-control" type="number" id="depositHunian" min="0" step="any" placeholder="Contoh: 300000" required>
+              </div>
+              <div class="col-md-2">
+                <button class="btn btn-primary w-100" type="submit">Hitung</button>
+              </div>
+            </div>
+          </form>
+
+          <!-- area untuk menampilkan hasil perhitungan biaya awal hunian -->
+          <p class="mt-3 mb-0" id="hasilBiayaAwal" aria-live="polite"></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-top bg-white py-4">
+      <div class="container small text-body-secondary">®HunianKu · 2026</div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/kalkulator-hunian.js"></script>
+  </body>
+</html>
